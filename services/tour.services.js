@@ -39,6 +39,8 @@ exports.getCheapestToursService = async () => {
 
 exports.updateTourByIdService = async (data, id) => {
     
-    const result = await Tour.updateOne({_id: id}, {$set: data});
+    const result = await Tour.updateOne({_id: id}, {$set: data}, {
+        runValidators: true
+    });
     return result;
 }

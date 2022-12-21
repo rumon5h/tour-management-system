@@ -9,9 +9,9 @@ exports.getAllTourService = async (filters, queries) => {
     .sort(queries.sortBy);
 
     const total = await Tour.countDocuments(filters);
-    const pages = Math.ceil(total / queries.limit);
+    const totalPages = Math.ceil(total / queries.limit);
 
-    return { total, pages, result};
+    return { total, totalPages, result};
 }
 
 exports.createTourService = async (data) => {

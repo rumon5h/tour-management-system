@@ -36,3 +36,9 @@ exports.getCheapestToursService = async () => {
     const result = await Tour.find({}).sort({price: 1}).limit(3);
     return result;
 }
+
+exports.updateTourByIdService = async (data, id) => {
+    
+    const result = await Tour.updateOne({_id: id}, {$set: data});
+    return result;
+}

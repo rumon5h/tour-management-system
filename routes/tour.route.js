@@ -9,6 +9,8 @@ router.route('/')
 .get(tourController.getAllTour)
 .post(tourController.createTour)
 
-router.route('/:id').get(tourController.getATourById)
+router.route('/:id')
+.get(tourController.getATourById)
+.patch(tourController.updateTourById)
 
 module.exports = router;

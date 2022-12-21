@@ -11,8 +11,15 @@ app.get('/', (req, res, next) => {
     res.send('Hello World');
 })
 
-// app.get('*', (req, res, next) =>{
-//     res.status(400).send('This route is not exists!')
-// })
+// Routes
+const tourRoutes = require('./routes/tour.route');
+
+
+app.get('*', (req, res, next) =>{
+    res.write('<h1>This route is not exists!</h1>')
+    res.end();
+})
+
+app.use('/api/v1/tour', tourRoutes)
 
 module.exports = app;

@@ -2,6 +2,8 @@ const express = require('express');
 const router = express.Router();
 const tourController = require('../controllers/tour.controllers');
 
+router.route('/trending').get(tourController.getTrendingTours)
+
 router.route('/')
 .get(tourController.getAllTour)
 .post(tourController.createTour)
